@@ -1,0 +1,41 @@
+====================================
+	   Ajuda InfoNote
+====================================
+
+1) Efetuar Login
+
+Para efetuar o login é necessário
+que você esteja cadastrado no sistema.
+
+2) Cadastrar Cliente
+
+Será necessário preencher todos os campos
+solicitados.
+
+3) Buscar Notebook
+
+Será necessário informar o número do
+notebook.
+
+4) Inserir notebook no carrinho
+
+Será necessário informar o número do
+notebook.
+
+5) Remover notebook do carrinho
+
+Será necessário informar o número do
+notebook.
+
+6) Ver carrinho
+
+Exibe os itens no carrinho
+
+7) Efetuar compra
+
+Conclui o processo de compra
+
+8) Sair
+
+Encerra o sistema.
+

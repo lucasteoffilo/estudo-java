@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;SuperClass&apos; to &apos;Superclass&apos;&#x0D;&#x0A;- Original element: &apos;SuperClass&apos;&#x0D;&#x0A;- Renamed element: &apos;SuperClass&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;SuperClass&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=SuperClass" name="Superclass" references="true" stamp="1525197793213" version="1.0"/>
+</session>

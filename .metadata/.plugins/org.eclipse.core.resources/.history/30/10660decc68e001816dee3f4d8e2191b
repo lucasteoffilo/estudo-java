@@ -1,0 +1,82 @@
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.layout.GridLayout;
+import swing2swt.layout.BorderLayout;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Group;
+import swing2swt.layout.FlowLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.custom.CLabel;
+
+public class ExemploJFrame {
+
+	protected Shell shell;
+
+	/**
+	 * Launch the application.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			ExemploJFrame window = new ExemploJFrame();
+			window.open();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		Display display = Display.getDefault();
+		createContents();
+		shell.open();
+		shell.layout();
+		while (!shell.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+	}
+
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+		shell = new Shell();
+		shell.setSize(450, 300);
+		shell.setText("SWT Application");
+		shell.setLayout(new BorderLayout(0, 0));
+		
+		Group group = new Group(shell, SWT.NONE);
+		group.setLayoutData(BorderLayout.NORTH);
+		group.setLayout(new GridLayout(9, false));
+		
+		Button btnCoco = new Button(group, SWT.CHECK);
+		btnCoco.setText("Coco");
+		new Label(group, SWT.NONE);
+		new Label(group, SWT.NONE);
+		new Label(group, SWT.NONE);
+		new Label(group, SWT.NONE);
+		
+		Button btnCheckButton = new Button(group, SWT.CHECK);
+		btnCheckButton.setText("Chocolate");
+		new Label(group, SWT.NONE);
+		new Label(group, SWT.NONE);
+		
+		Button btnMorango = new Button(group, SWT.CHECK);
+		btnMorango.setText("Morango");
+		
+		Composite composite = new Composite(shell, SWT.NONE);
+		composite.setLayoutData(BorderLayout.CENTER);
+		
+		CLabel label = new CLabel(composite, SWT.NONE);
+		label.setBounds(182, 69, 61, 21);
+		label.setText("");
+
+	}
+}

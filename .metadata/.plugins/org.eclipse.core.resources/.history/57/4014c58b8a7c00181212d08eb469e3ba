@@ -1,0 +1,144 @@
+package controller;
+
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.NumberFormat;
+import java.util.Locale;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+
+@SuppressWarnings("serial")
+public class ExercicioLanchonete extends JFrame {
+
+	JLabel sand = new JLabel("Lanche: ");
+
+	JRadioButton hamburguer = new JRadioButton("Hambúrguer - R$5,00");
+	JRadioButton xburguer = new JRadioButton("X-Burguer - R$6,50");
+	JRadioButton xegg = new JRadioButton("X-Egg - R$7,50");
+	JRadioButton xtudo = new JRadioButton("X-Tudo - R$10,00");
+
+	JLabel comp = new JLabel("Complemento");
+
+	JCheckBox salada = new JCheckBox("Salada - R$1,50");
+	JCheckBox carne = new JCheckBox("Carne Extra - R$2,00");
+	JCheckBox ovo = new JCheckBox("Ovo extra - R$2,00");
+	JCheckBox refri = new JCheckBox("Refrigerante Refil - R$10,00");
+
+	JButton adicionar = new JButton("Adicionar");
+	JButton fechar = new JButton("Fechar Pedido");
+	JButton cancelar = new JButton("Cancelar Pedido");
+	JButton sair = new JButton("Sair");
+
+	JTextArea texto = new JTextArea();
+
+	public ExercicioLanchonete() {
+
+		hamburguer.setActionCommand("5.00");
+		xburguer.setActionCommand("6.50");
+		xegg.setActionCommand("7.50");
+		xtudo.setActionCommand("10.00");
+
+		ButtonGroup group = new ButtonGroup();
+
+		group.add(hamburguer);
+		group.add(xburguer);
+		group.add(xegg);
+		group.add(xtudo);
+
+		salada.setActionCommand("1.50");
+		carne.setActionCommand("2.00");
+		ovo.setActionCommand("2.00");
+		refri.setActionCommand("10.00");
+
+		ButtonGroup group2 = new ButtonGroup();
+
+		group2.add(salada);
+		group2.add(carne);
+		group2.add(ovo);
+		group2.add(refri);
+
+		texto.setEditable(false);
+
+		adicionar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				double valorLanche = Double.parseDouble(group.getSelection().getActionCommand());
+				double valorComp = Double.parseDouble(group2.getSelection().getActionCommand());
+				double total = valorComp + valorLanche;
+
+				Locale local = new Locale("pt", "BR");
+				NumberFormat nf = NumberFormat.getCurrencyInstance(local);
+
+				String lanche = String.valueOf(group.getSelection().toString());
+
+				String comp = String.valueOf(group2.getSelection().getSelectedObjects());
+
+				texto.append(lanche + "\n" + comp + "\n" + "Total: " + nf.format(total));
+
+			}
+		});
+
+		JPanel lanche = new JPanel(new GridLayout(5, 1));
+
+		lanche.add(sand);
+		lanche.add(hamburguer);
+		lanche.add(xburguer);
+		lanche.add(xegg);
+		lanche.add(xtudo);
+
+		JPanel compl = new JPanel(new GridLayout(5, 1));
+
+		compl.add(comp);
+		compl.add(salada);
+		compl.add(carne);
+		compl.add(ovo);
+		compl.add(refri);
+
+		JPanel opt = new JPanel(new GridLayout(4, 1));
+
+		opt.add(adicionar);
+		opt.add(fechar);
+		opt.add(cancelar);
+		opt.add(sair);
+
+		JPanel txt = new JPanel(new GridLayout(1, 1));
+
+		txt.add(texto);
+
+		JPanel all = new JPanel(new GridLayout(1, 4));
+
+		all.add(lanche);
+		all.add(compl);
+		all.add(opt);
+		all.add(txt);
+
+		JScrollPane scroll = new JScrollPane(all, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+		add(scroll);
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+
+		new ExercicioLanchonete();
+	}
+
+}

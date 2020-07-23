@@ -1,0 +1,21 @@
+package controller;
+
+public class Exercicio3 {
+
+	static int[] res = new int[2];
+	static double sort;
+
+	public static void main(String[] args) {
+
+		for (int i = 0; i < 10; i++) {
+			sort = Math.random();
+			res[i] = (int) (sort * 80);
+		}
+		for (int i = 0; i < 2; i++) {
+			System.out.println("Primeiro número: " + res[i]);
+		}
+		System.out.println("Maior número: " + Math.max(res[0], res[1]));
+
+	}
+
+}

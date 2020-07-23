@@ -1,0 +1,11 @@
+package model;
+
+public interface IUsuario {
+
+	boolean validarLogin(String login, String senha);
+
+	String inverterNome(String nome);
+	
+	double gerarSenha(String senha);
+
+}

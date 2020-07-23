@@ -1,0 +1,29 @@
+package controller;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class CheckBox extends JFrame {
+
+	public static void main(String[] args) {
+
+		ImageIcon iconChocolate = new ImageIcon("img/chocolate.jpg");
+		ImageIcon iconCoco = new ImageIcon("img/coco.jpg");
+		ImageIcon iconMorango = new ImageIcon("img/coco.jpg");
+
+		JLabel labelChocolate = new JLabel(iconChocolate);
+		JLabel labelCoco = new JLabel(iconCoco);
+		JLabel labelMorango = new JLabel(iconMorango);
+		
+		
+		public CheckBox() {
+			
+			super("Exemplo CheckBox");
+			
+		}
+		
+
+	}
+
+}
