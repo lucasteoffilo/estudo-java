@@ -57,10 +57,6 @@ Uso de componentes gráficos como botões, caixas de texto e rótulos.
 GUI05_Tabela
 Criação e manipulação de tabelas com o componente JTable.
 
-Como Usar
-Clone este repositório:
-git clone https://github.com/seu-usuario/estudo-java.git
-
 Importe os arquivos no seu ambiente de desenvolvimento (recomendado: IntelliJ IDEA ou Eclipse).
 Explore cada pasta para estudar os exemplos e exercícios relacionados.
 Contribuições
